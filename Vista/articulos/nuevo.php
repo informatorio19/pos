@@ -2,9 +2,9 @@
 
    include "Vista/plantilla/encabezado.php";
 ?>
-
-<form>
 <h1>FORMULARIO DE PRODUCTOS</h1>
+
+<form action="Vista/articulos/datos.php" method="POST">
   <div class="form-group">
     <label>Producto</label>
     <input type="text" class="form-control" name="nombre" placeholder="Ingrese un producto">

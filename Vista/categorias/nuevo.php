@@ -1,9 +1,10 @@
 <?php
 
-   include "Vista/plantilla/encabezado.php";
+ include "Vista/plantilla/encabezado.php";
+
 ?>
 
-<form>
+<form action="nuevo.php" method="POST">
 <h1>FORMULARIO DE CATEGORIAS</h1>
   <div class="form-group">
     <label>Categoria</label>
