@@ -15,7 +15,7 @@
             $this->host = "localhost";
             $this->user = "root";
             $this->pass = "";
-            $this->bd = "pos";
+            $this->bd = "escuela";
 
             
             $this->con = new mysqli(

@@ -2,12 +2,12 @@
 
     include "Conexion.php";
 
-    class Articulo{
+    class Alumno{
 
         private $id;
         private $nombre;
-        private $precio;
-        private $stock;
+        private $dni;
+        private $telefono;
 
         public $conexion;
 
@@ -17,38 +17,33 @@
         }
 
         public function listar(){
-            $sql = "SELECT * FROM articulos";
+            $sql = "SELECT * FROM alumnos";
             return $this->conexion->retorno($sql);
         }
 
         public function buscar(){
-            $sql = "SELECT * FROM articulos WHERE id=$this->id";
+            $sql = "SELECT * FROM alumnos WHERE id=$this->id";
             return $this->conexion->retorno($sql)->fetch_array();
-        }
-
-        // public function buscarNombre($articulo){
-        //     $sql = "SELECT * FROM articulos WHERE nombre LIKE '%$articulo%'";
-        //     return $this->conexion->retorno($sql);
-        // }   
+        } 
 
         public function eliminar(){
 
-            $sql = "DELETE FROM articulos WHERE id=$this->id";
+            $sql = "DELETE FROM alumnos WHERE id=$this->id";
             $this->conexion->consulta($sql);
 
         }
 
         public function insertar(){
-            $sql = "INSERT INTO articulos (nombre,precio,stock) 
-                    VALUES('$this->nombre',$this->precio,$this->stock)";
+            $sql = "INSERT INTO alumnos (nombre,dni,telefono) 
+                    VALUES('$this->nombre',$this->dni,$this->telefono)";
 
             $this->conexion->consulta($sql);
 
         }
 
         public function actualizar(){
-            $sql = "UPDATE articulos 
-                    SET nombre='$this->nombre', precio=$this->precio, stock=$this->stock 
+            $sql = "UPDATE alumnos 
+                    SET nombre='$this->nombre', dni=$this->dni, telefono=$this->telefono 
                     WHERE id=$this->id";
 
              $this->conexion->consulta($sql);
@@ -65,20 +60,14 @@
             $this->nombre = $nombre;
         }
 
-        public function setPrecio($precio){
-            $this->precio = $precio;
+        public function setDni($dni){
+            $this->dni = $dni;
         }
 
-        public function setStock($stock){
-            $this->stock = $stock;
+        public function setTelefono($telefono){
+            $this->telefono = $telefono;
         }
 
 
     }
-
-
-   
-    
-    
-
 ?>
